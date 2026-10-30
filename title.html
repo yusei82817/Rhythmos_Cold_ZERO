@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050a12">
+  <title>Title | Rhythmos: Cold ZERO</title>
+  <style>
+    :root { color-scheme: dark; --ice:#a7f2ff; --cyan:#36d5ed; }
+    * { box-sizing:border-box; }
+    body {
+      margin:0; min-height:100vh; display:grid; place-items:center; overflow:hidden;
+      color:#eafaff; font-family:Arial, "Noto Sans JP", sans-serif;
+      background:radial-gradient(ellipse at 50% 48%, #15364a 0%, #091725 42%, #03070d 100%);
+    }
+    body::before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.6;
+      background:linear-gradient(125deg,transparent 0 48%,#8eeeff0b 48.1% 48.3%,transparent 48.4%),
+                 linear-gradient(305deg,transparent 0 61%,#8eeeff0b 61.1% 61.3%,transparent 61.4%);
+    }
+    main { position:relative; width:min(760px,90vw); text-align:center; }
+    .tag { color:var(--cyan); font-size:.7rem; letter-spacing:.5em; }
+    h1 { margin:20px 0 6px; font-size:clamp(2.5rem,9vw,6.2rem); font-weight:300; letter-spacing:.13em; }
+    h1 span { color:var(--ice); text-shadow:0 0 30px #36d5ed66; }
+    .subtitle { color:#8ba8b8; letter-spacing:.35em; font-size:.75rem; }
+    .rule { height:1px; width:min(420px,70vw); margin:34px auto; background:linear-gradient(90deg,transparent,#57dff2,transparent); }
+    a.play {
+      display:inline-block; min-width:240px; padding:17px 30px; border:1px solid #8eeeff99;
+      color:var(--ice); background:#0b1d2a; text-decoration:none; letter-spacing:.24em;
+      transition:background .2s, box-shadow .2s, transform .2s;
+    }
+    a.play:hover, a.play:focus-visible { background:#174057; box-shadow:0 0 28px #36d5ed44; transform:translateY(-2px); outline:none; }
+    .foot { position:fixed; bottom:22px; color:#587283; font-size:.65rem; letter-spacing:.2em; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="tag">RHYTHMOS PROJECT</div>
+    <h1>COLD <span>ZERO</span></h1>
+    <div class="subtitle">FIND THE BEAT IN THE SILENCE</div>
+    <div class="rule"></div>
+    <a class="play" href="cpselect.html">Cold ZERO play</a>
+  </main>
+  <div class="foot">SYSTEM ONLINE</div>
+</body>
+</html>
