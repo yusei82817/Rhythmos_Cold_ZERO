@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050a12">
+  <title>Rhythmos: Cold ZERO</title>
+  <style>
+    :root { color-scheme: dark; --ice:#8eeeff; --cyan:#32cce8; --muted:#7893a5; }
+    * { box-sizing: border-box; }
+    body {
+      margin:0; min-height:100vh; overflow:hidden; display:grid; place-items:center;
+      background: radial-gradient(ellipse at 50% 55%, #10283a 0%, #081522 42%, #03070d 100%);
+      color:#eafaff; font-family: "Arial", "Noto Sans JP", sans-serif;
+    }
+    body::before, body::after {
+      content:""; position:fixed; inset:-30%; pointer-events:none;
+      background: repeating-linear-gradient(115deg, transparent 0 110px, #8eeeff08 111px 112px, transparent 113px 220px);
+      transform:translateX(-8%); animation: drift 18s linear infinite;
+    }
+    body::after { opacity:.45; transform:translateX(8%); animation-duration:26s; }
+    @keyframes drift { to { translate: 8% 0; } }
+    main { position:relative; z-index:1; width:min(760px,90vw); text-align:center; }
+    .eyebrow { color:var(--cyan); letter-spacing:.42em; font-size:.72rem; }
+    h1 { margin:22px 0 8px; font-size:clamp(2.4rem,8vw,5.8rem); letter-spacing:.12em; font-weight:300; }
+    h1 span { color:var(--ice); text-shadow:0 0 28px #32cce855; }
+    .line { width:min(360px,65vw); height:1px; margin:26px auto; background:linear-gradient(90deg,transparent,var(--cyan),transparent); }
+    #message { min-height:2em; color:#b9d2df; letter-spacing:.18em; font-size:clamp(.8rem,2vw,1rem); }
+    button {
+      margin-top:38px; padding:14px 34px; border:1px solid #70e8fa88; background:#0b1c29aa;
+      color:var(--ice); letter-spacing:.28em; cursor:pointer; transition:.2s;
+    }
+    button:hover, button:focus-visible { background:#15364a; border-color:var(--ice); box-shadow:0 0 24px #32cce833; outline:none; }
+    .corner { position:fixed; bottom:22px; left:0; right:0; color:#587283; font-size:.65rem; letter-spacing:.2em; text-align:center; }
+    .hidden { display:none; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="eyebrow">RHYTHMOS PROJECT</div>
+    <h1> COLD <span>ZERO</span> </h1>
+    <div class="line"></div>
+    <p id="message">THE SIGNAL IS WAITING.</p>
+    <button id="start" type="button">INITIALIZE</button>
+    <button id="enter" class="hidden" type="button">ENTER TITLE</button>
+  </main>
+  <div class="corner">A RHYTHM EXPERIENCE // SYSTEM READY</div>
+  <script>
+    const message = document.getElementById("message");
+    const start = document.getElementById("start");
+    const enter = document.getElementById("enter");
+    start.addEventListener("click", () => {
+      message.textContent = "COLD ZERO. THE FIRST BEAT BEGINS.";
+      start.classList.add("hidden");
+      enter.classList.remove("hidden");
+    });
+    enter.addEventListener("click", () => {
+      location.href = "title.html";
+    });
+  </script>
+</body>
+</html>
